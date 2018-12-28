@@ -101,93 +101,6 @@
             </form>
         </div>
 
-        <!-- <p v-if="errors.length">
-          <ul>
-          <b>Please correct the following error(s):</b>
-            <li class="alert-danger" v-for="error in errors" v-bind:key="error.id">{{ error }}</li>
-          </ul>
-        </p> -->
-
-        <!-- <form @submit.prevent="onSubmit" method="post">
-          <div class="card mt-3">
-            <span class="text-header">1</span>
-            <p
-              class="text-sub"
-            >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex obcaecati veritatis accusamus quos incidunt et, dolorem eveniet quasi magnam aut. Debitis.</p>
-
-            <div class="row text-center pb-1">
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option22" name="Fq" class="" type="radio" v-model="Fq" value="1" />
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option23" name="Fq" class="" type="radio" v-model="Fq" value="1" />
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option24" name="Fq" class="" type="radio" v-model="Fq" value="1" />                
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mt-3">
-            <span class="text-header">2</span>
-            <p
-              class="text-sub"
-            >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex obcaecati veritatis accusamus quos incidunt et, dolorem eveniet quasi magnam aut. Debitis.</p>
-
-            <div class="row text-center pb-1">
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option25" name="Sq" class="" type="radio" v-model="Sq" value="2" />
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option26" name="Sq" class="" type="radio" v-model="Sq" value="2" />
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option27" name="Sq" class="" type="radio" v-model="Sq" value="2" />                
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mt-3">
-            <span class="text-header">3</span>
-            <p
-              class="text-sub"
-            >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex obcaecati veritatis accusamus quos incidunt et, dolorem eveniet quasi magnam aut. Debitis.</p>
-
-            <div class="row text-center pb-1">
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option28" name="Tq" class="" type="radio" v-model="Tq" value="3" />
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option29" name="Tq" class="" type="radio" v-model="Tq" value="3" />
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="inputGroup2 btn">
-                  <input id="option23" name="Tq" class="" type="radio" v-model="Tq" value="3" />                
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center mt-3 mb-5">
-            <input class="btn btn-block btn-danger " type="submit" value="Submit">
-          </div>
-        </form> -->
       </div>
     </div>
   </div>
@@ -243,14 +156,21 @@ export default {
 
         setTimeout(() => {
           window.location.href = 'successful';
-        }, 2000)
+        }, 1500)
 	
         return;
       } 
 
-      if(!this.Fq) this.errors.push("question 1 feild required.");
-      if(!this.Sq) this.errors.push("question 2 feild required.");
-      if(!this.Tq) this.errors.push("question 3 feild required.");
+      if(!this.Fq) {
+        this.errors.push("question 1 feild required.");
+      }
+      if(!this.Sq){
+        this.errors.push("question 2 feild required.");
+
+      }
+      if(!this.Tq) {
+        this.errors.push("question 3 feild required.");
+      }
       e.preventDefault();
       this.Timeout()
     },
